@@ -38,7 +38,7 @@ export const LandingFooter = () => {
 				</div>
 				<div></div>
 			</div>
-			<div className="gap-x-2 flex justify-center ">
+			<div className="gap-x-2 flex flex-col justify-center ">
 				<Badge
 					variant={"secondary"}
 					className="bg-transparent text-muted-foreground"
