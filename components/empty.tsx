@@ -1,7 +1,7 @@
-import Image from "next/image"
+import Image from "next/image";
 
 interface EmptyProps {
-	label: string
+	label: string;
 }
 
 export const Empty = ({ label }: EmptyProps) => {
@@ -14,9 +14,7 @@ export const Empty = ({ label }: EmptyProps) => {
 					src={"/empty.png"}
 				/>
 			</div>
-            <p className="text-muted-foreground text-sm text-center">
-                {label}
-            </p>
+			<p className="text-muted-foreground text-sm text-center">{label}</p>
 		</div>
-	)
-}
+	);
+};

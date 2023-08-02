@@ -23,6 +23,7 @@ import { Empty } from "@/components/ui/empty";
 import { useProModal } from "@/hooks/use-pro-modal";
 
 import { formSchema } from "./constants";
+import { EmptyVariants } from "@/components/empty-variants";
 
 const CodePage = () => {
 	const router = useRouter();
@@ -121,7 +122,10 @@ const CodePage = () => {
 						</div>
 					)}
 					{messages.length === 0 && !isLoading && (
-						<Empty label="No conversation started." />
+						<EmptyVariants
+							variant="aiboy"
+							label="No conversation started."
+						/>
 					)}
 					<div className="flex flex-col gap-y-4">
 						{messages.map((message) => (

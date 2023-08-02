@@ -27,6 +27,7 @@ import {
 import { useProModal } from "@/hooks/use-pro-modal";
 
 import { amountOptions, formSchema, resolutionOptions } from "./constants";
+import { EmptyVariants } from "@/components/empty-variants";
 
 const PhotoPage = () => {
 	const proModal = useProModal();
@@ -68,7 +69,7 @@ const PhotoPage = () => {
 		<div>
 			<Heading
 				title="Image Generation"
-				description="Turn your prompt into an image."
+				description="Turns your prompt into an AI generated image."
 				icon={ImageIcon}
 				iconColor="text-pink-700"
 				bgColor="bg-pink-700/10"
@@ -98,7 +99,7 @@ const PhotoPage = () => {
 										<Input
 											className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
 											disabled={isLoading}
-											placeholder="A picture of a horse in Swiss alps"
+											placeholder="A picture a horse swimming"
 											{...field}
 										/>
 									</FormControl>
@@ -181,7 +182,10 @@ const PhotoPage = () => {
 					</div>
 				)}
 				{photos.length === 0 && !isLoading && (
-					<Empty label="No images generated." />
+					<EmptyVariants
+						variant="draw"
+						label="No images generated."
+					/>
 				)}
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-8">
 					{photos.map((src) => (

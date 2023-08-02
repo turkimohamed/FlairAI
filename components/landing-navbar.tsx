@@ -22,15 +22,23 @@ export const LandingNavBar = () => {
 				href="/"
 				className="flex items-center"
 			>
-				<div className="relative h-8 w-8 mr-4">
+				<div className="relative h-14 w-14 ">
 					<Image
 						fill
 						alt="logo"
-						src={"/logo.png"}
+						src={"/logo1.png"}
 					/>
 				</div>
 				<h1 className={cn("text-2xl font-bold text-white", font.className)}>
 					Flair
+					<span
+						className={cn(
+							" font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-lime-500 to-emerald-600",
+							font.className
+						)}
+					>
+						AI
+					</span>
 				</h1>
 			</Link>
 			<div className="flex items-centergap-x-2">

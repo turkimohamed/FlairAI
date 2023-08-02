@@ -22,6 +22,7 @@ import { Empty } from "@/components/ui/empty";
 import { useProModal } from "@/hooks/use-pro-modal";
 
 import { formSchema } from "./constants";
+import { EmptyVariants } from "@/components/empty-variants";
 
 const ConversationPage = () => {
 	const router = useRouter();
@@ -66,7 +67,7 @@ const ConversationPage = () => {
 		<div>
 			<Heading
 				title="Conversation"
-				description="Our most advanced conversation model."
+				description="An advanced AI conversation model."
 				icon={MessageSquare}
 				iconColor="text-violet-500"
 				bgColor="bg-violet-500/10"
@@ -97,7 +98,7 @@ const ConversationPage = () => {
 											<Input
 												className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
 												disabled={isLoading}
-												placeholder="How do I calculate the radius of a circle?"
+												placeholder="How do I calculate the mass of the sun?"
 												{...field}
 											/>
 										</FormControl>
@@ -122,9 +123,12 @@ const ConversationPage = () => {
 						</div>
 					)}
 					{messages.length === 0 && !isLoading && (
-						<Empty label="No conversation started." />
+						<EmptyVariants
+							variant={"compman"}
+							label="No conversation started."
+						/>
 					)}
-					<div className="flex flex-col gap-y-4">
+					<div className="flex flex-col gap-y-4 items-center">
 						{messages.map((message) => (
 							<div
 								key={message.content}
@@ -136,7 +140,7 @@ const ConversationPage = () => {
 								)}
 							>
 								{message.role === "user" ? <UserAvatar /> : <BotAvatar />}
-								<p className="text-sm">{message.content}</p>
+								<p className="text-sm items-center">{message.content}</p>
 							</div>
 						))}
 					</div>

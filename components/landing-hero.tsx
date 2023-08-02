@@ -3,6 +3,8 @@ import { useAuth } from "@clerk/nextjs";
 import Link from "next/link";
 import TypewriterComponent from "typewriter-effect";
 import { Button } from "./ui/button";
+import { EmptyVariants } from "./empty-variants";
+import Image from "next/image";
 
 export const LandingHero = () => {
 	const { isSignedIn } = useAuth();
@@ -13,7 +15,7 @@ export const LandingHero = () => {
             space-y-5 font-extrabold"
 			>
 				<h1>The Most Advanced AI Tool for</h1>
-				<div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 pb-5">
+				<div className="text-transparent bg-clip-text bg-gradient-to-r from-lime-500 via-green-600 to-emerald-700 pb-5">
 					<TypewriterComponent
 						options={{
 							strings: [
